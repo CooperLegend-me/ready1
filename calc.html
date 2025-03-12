@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Строительная Компания</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles1.css"> 
+    <link rel="stylesheet" href="styles2.css"> 
+    <link rel="stylesheet" href="imagesc.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-12">
+        <div class="container-12">
+            <div class="logo-12">
+                <img src="images/logo1.png" alt="Логотип компании" class="logo-image-14">
+                <span class="company-name">Строительная компания</span>
+                <span class="brand-name">Мари-Арт</span>
+            </div>
+                <ul class="nav-list-12">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">Информация</a></li>
+                    <li><a href="otsivi.html">Отзывы</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="calc.html">Калькулятор</a></li> 
+                </ul>   
+        </div>
+    </header>
+
+<div class="container">
+    <h1>Калькулятор расчета стоимости</h1>
+    <form id="constructionForm" onsubmit="return calculateCost(event)">
+        <label for="area">Площадь дома (кв. м):</label>
+        <input type="number" id="area" required>
+
+        <label for="floors">Количество этажей:</label>
+        <input type="number" id="floors" required>
+
+        <label for="roofType">Тип крыши:</label>
+        <select id="roofType">
+            <option value="flat">Плоская</option>
+            <option value="gable">Скатная</option>
+            <option value="hip">Шатровая</option>
+            <option value="mansard">Мансардная</option>
+        </select>
+
+        <label for="wallMaterial">Материал стен:</label>
+        <select id="wallMaterial">
+            <option value="brick">Кирпич</option>
+            <option value="wood">Дерево</option>
+            <option value="concrete">Бетон</option>
+            <option value="foam">Пеноблоки</option>
+        </select>
+
+        <label for="foundationType">Тип фундамента:</label>
+        <select id="foundationType">
+            <option value="strip">Ленточный</option>
+            <option value="pile">Свайный</option>
+            <option value="slab">Плита</option>
+            <option value="column">Столбчатый</option>
+        </select>
+
+        <label for="finishingMaterial">Материал отделки:</label>
+        <select id="finishingMaterial">
+            <option value="plaster">Штукатурка</option>
+            <option value="paint">Краска</option>
+            <option value="tile">Плитка</option>
+            <option value="woodPanel">Деревянные панели</option>
+        </select>
+
+        <button type="submit">Рассчитать стоимость</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <div id="contactForm" style="display:none;">
+        <h2>Введите ваши данные</h2>
+        <label for="fullName">ФИО:</label>
+        <input type="text" id="fullName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <button id="submitContact" onclick="submitContact()">Отправить</button>
+    </div>
+    <button id="adminButton">Перейти в админку</button>
+    <h2 class="hide2">Сохраненные расчеты</h2>
+    <ul id="savedCalculations" class="hide2"></ul>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
+
